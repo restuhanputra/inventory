@@ -5,9 +5,6 @@ class Authentication extends CI_Controller
 {
   public function index()
   {
-    // $this->load->view('auth/template/header');
-    // $this->load->view('auth/index');
-    // $this->load->view('auth/template/footer');
     $data = [
       'title' => 'Login'
     ];
@@ -17,10 +14,6 @@ class Authentication extends CI_Controller
 
   public function forgot()
   {
-    // $this->load->view('auth/template/header');
-    // $this->load->view('auth/forgot');
-    // $this->load->view('auth/template/footer');
-
     $data = [
       'title' => 'Forgot Password'
     ];
