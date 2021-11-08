@@ -53,6 +53,7 @@ $route['default_controller'] = 'Authentication';
 
 $route['auth']   = 'Authentication';
 $route['forgot'] = 'Authentication/forgot';
+$route['testing'] = 'Authentication/sendemail';
 
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
