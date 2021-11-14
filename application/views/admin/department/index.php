@@ -56,7 +56,7 @@
                       <td style="text-align: center;"><?= $i++; ?></td>
                       <td><?= $department->department_name ?></td>
                       <td style="text-align: center;">
-                        <button class="btn btn-success">Edit</button>
+                        <a href="<?= base_url('department/edit/' . $department->id); ?>" class="btn btn-success">Edit</a>
                         <button class="btn btn-danger delete-department" data-id="<?= $department->id; ?>">Hapus</button>
                       </td>
                     </tr>
