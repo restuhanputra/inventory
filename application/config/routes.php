@@ -62,6 +62,7 @@ $route['dashboard'] = 'Admin_dashboard';
 $route['department']               = 'Admin_department';
 $route['department/add']           = 'Admin_department/create';
 $route['department/delete/(:any)'] = 'Admin_department/delete/$1';
+$route['department/edit/(:any)']   = 'Admin_department/update/$1';
 
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
