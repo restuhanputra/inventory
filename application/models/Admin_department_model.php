@@ -30,4 +30,10 @@ class Admin_department_model extends CI_Model
     $this->db->delete($this->table, $data);
     return $this->db->affected_rows();
   }
+
+  public function update($data, $where)
+  {
+    $this->db->update($this->table, $data, $where);
+    return $this->db->affected_rows();
+  }
 }
