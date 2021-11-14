@@ -9,3 +9,13 @@ function template($page = null, $data = null)
   $ci->load->view('admin/' . $page, $data);
   $ci->load->view('admin/dashboard/template/footer', $data);
 }
+
+function usetFlash()
+{
+  if (isset($_SESSION['success'])) {
+    unset($_SESSION['success']);
+  }
+  if (isset($_SESSION['error'])) {
+    unset($_SESSION['error']);
+  }
+}
