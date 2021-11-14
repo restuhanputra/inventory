@@ -29,9 +29,16 @@ $(document).ready(function () {
     });
   }
 
+  // DELETE BUTTON
   $(document).on('click', '.delete-department', function () {
     var id = $(this).data("id");
     var url = `${base_url}department/delete/${id}`;
+    deleteQuestion(url, "Yakin akan menghapus data ini ?");
+  });
+
+  $(document).on('click', '.delete-unit', function () {
+    var id = $(this).data("id");
+    var url = `${base_url}unit/delete/${id}`;
     deleteQuestion(url, "Yakin akan menghapus data ini ?");
   });
 });
