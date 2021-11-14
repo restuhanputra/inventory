@@ -36,7 +36,7 @@
         </li>
         <!-- /.Dashboard -->
         <!-- Departemen -->
-        <li class="nav-item <?= $this->uri->segment(1) === 'department' ? 'menu-open' : 'menu-close'; ?>"">
+        <li class="nav-item <?= $this->uri->segment(1) === 'department' || $this->uri->segment(1) === 'unit' ? 'menu-open' : 'menu-close'; ?>"">
           <a href=" #" class="nav-link">
           <i class="nav-icon fas fa-warehouse"></i>
           <p>
@@ -49,6 +49,14 @@
               <a href="<?= base_url('department') ?>" class="nav-link <?= $this->uri->segment(1) === 'department' ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Departemen</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('unit') ?>" class="nav-link <?= $this->uri->segment(1) === 'unit' ? 'active' : ''; ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Satuan</p>
               </a>
             </li>
           </ul>
