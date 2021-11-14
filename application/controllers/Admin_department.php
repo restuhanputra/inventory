@@ -63,6 +63,43 @@ class Admin_department extends CI_Controller
     redirect($this->redirect);
   }
 
+  public function update($id)
+  {
+    $cek = $this->Department->getDataBy(['id' => $id]);
+    if ($cek->num_rows() > 0) {
+      $row = $cek->row();
+      $oldName = $row->department_name;
+      $this->_validation($oldName);
+      if ($this->form_validation->run() == FALSE) {
+        $data = [
+          'title'      => 'Ubah Data Departemen',
+          'deskripsi'  => 'Mengubah data departemen',
+          'department' => $row,
+        ];
+        $page = 'department/update';
+        template($page, $data);
+      } else {
+        $dataUpdate = [
+          'department_name' => htmlspecialchars($this->input->post("name")),
+          'updated_at' => date("Y-m-d H:i:s",)
+        ];
+        $where = [
+          'id' => $id
+        ];
+        $update = $this->Department->update($dataUpdate, $where);
+        if ($update > 0) {
+          $this->session->set_flashdata("success", "Data berhasil diupdate");
+        } else {
+          $this->session->set_flashdata("error", "Server sedang sibuk silahkan coba lagi");
+        }
+        redirect($this->redirect);
+      }
+    } else {
+      $this->session->set_flashdata("error", "Data tidak ada");
+      redirect($this->redirect);
+    }
+  }
+
   private function _validation($name = null)
   {
     $postName = $this->input->post("name");
