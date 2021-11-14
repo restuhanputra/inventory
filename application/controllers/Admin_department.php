@@ -47,6 +47,22 @@ class Admin_department extends CI_Controller
     }
   }
 
+  public function delete($id)
+  {
+    $cek = $this->Department->getDataBy(['id' => $id]);
+    if ($cek->num_rows() > 0) {
+      $delete = $this->Department->delete(['id' => $id]);
+      if ($delete > 0) {
+        $this->session->set_flashdata("success", "Data berhasil dihapus");
+      } else {
+        $this->session->set_flashdata("error", "Server sedang sibuk silahkan coba lagi");
+      }
+    } else {
+      $this->session->set_flashdata("error", "Data tidak ada");
+    }
+    redirect($this->redirect);
+  }
+
   private function _validation($name = null)
   {
     $postName = $this->input->post("name");

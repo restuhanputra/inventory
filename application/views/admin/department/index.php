@@ -26,30 +26,6 @@
 
         <!-- col-12 -->
         <div class="col-6">
-          <!-- Alert -->
-          <?php if ($this->session->flashdata("success")) : ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong><?= $this->session->flashdata("success") ?></strong>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <?php
-            usetFlash();
-          endif ?>
-
-          <?php if ($this->session->flashdata("error")) : ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <strong><?= $this->session->flashdata("error") ?></strong>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <?php
-            usetFlash();
-          endif ?>
-          <!-- /.Alert -->
-
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">
@@ -81,7 +57,7 @@
                       <td><?= $department->department_name ?></td>
                       <td style="text-align: center;">
                         <button class="btn btn-success">Edit</button>
-                        <button class="btn btn-danger">Hapus</button>
+                        <button class="btn btn-danger delete-department" data-id="<?= $department->id; ?>">Hapus</button>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -109,3 +85,14 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<?php if ($this->session->flashdata("success")) : ?>
+  <div class="flashdata" data-flashdata="<?= $this->session->flashdata("success"); ?>" data-type="success"></div>
+<?php
+  usetFlash();
+endif; ?>
+<?php if ($this->session->flashdata("error")) : ?>
+  <div class="flashdata" data-flashdata="<?= $this->session->flashdata("error"); ?>" data-type="error"></div>
+<?php
+  usetFlash();
+endif; ?>

@@ -19,4 +19,15 @@ class Admin_department_model extends CI_Model
     $this->db->insert($this->table, $data);
     return $this->db->affected_rows();
   }
+
+  public function getDataBy($data)
+  {
+    return $this->db->get_where($this->table, $data);
+  }
+
+  public function delete($data)
+  {
+    $this->db->delete($this->table, $data);
+    return $this->db->affected_rows();
+  }
 }
