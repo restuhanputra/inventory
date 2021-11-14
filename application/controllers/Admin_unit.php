@@ -72,8 +72,8 @@ class Admin_unit extends CI_Controller
       $this->_validation($oldName);
       if ($this->form_validation->run() == FALSE) {
         $data = [
-          'title'     => 'Ubah Data Departemen',
-          'deskripsi' => 'Mengubah data departemen',
+          'title'     => 'Ubah Data Satuan',
+          'deskripsi' => 'Mengubah data satuan',
           'unit'      => $row,
         ];
         $page = 'unit/update';
