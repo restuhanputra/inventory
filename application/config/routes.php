@@ -53,16 +53,21 @@ $route['default_controller'] = 'Authentication';
 
 $route['auth']   = 'Authentication';
 $route['forgot'] = 'Authentication/forgot';
-$route['testing'] = 'Authentication/sendemail';
-
+// $route['testing'] = 'Authentication/sendemail';
 
 $route['dashboard'] = 'Admin_dashboard';
 
-// Data Departemen
+// DATA DEPARTMENT
 $route['department']               = 'Admin_department';
 $route['department/add']           = 'Admin_department/create';
 $route['department/delete/(:any)'] = 'Admin_department/delete/$1';
 $route['department/edit/(:any)']   = 'Admin_department/update/$1';
+
+// DATA UNIT
+$route['unit']               = 'Admin_unit';
+$route['unit/add']           = 'Admin_unit/create';
+$route['unit/delete/(:any)'] = 'Admin_unit/delete/$1';
+$route['unit/edit/(:any)']   = 'Admin_unit/update/$1';
 
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
