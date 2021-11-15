@@ -63,6 +63,12 @@ $route['department/add']           = 'Admin_department/create';
 $route['department/delete/(:any)'] = 'Admin_department/delete/$1';
 $route['department/edit/(:any)']   = 'Admin_department/update/$1';
 
+// DATA USER ROLE
+$route['role']               = 'Admin_user_role';
+$route['role/add']           = 'Admin_user_role/create';
+$route['role/delete/(:any)'] = 'Admin_user_role/delete/$1';
+$route['role/edit/(:any)']   = 'Admin_user_role/update/$1';
+
 // DATA UNIT
 $route['unit']               = 'Admin_unit';
 $route['unit/add']           = 'Admin_unit/create';

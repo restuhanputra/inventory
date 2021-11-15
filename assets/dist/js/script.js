@@ -41,4 +41,10 @@ $(document).ready(function () {
     var url = `${base_url}unit/delete/${id}`;
     deleteQuestion(url, "Yakin akan menghapus data ini ?");
   });
+
+  $(document).on('click', '.delete-role', function () {
+    var id = $(this).data("id");
+    var url = `${base_url}role/delete/${id}`;
+    deleteQuestion(url, "Yakin akan menghapus data ini ?");
+  });
 });
