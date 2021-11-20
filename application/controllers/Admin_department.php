@@ -10,6 +10,11 @@ class Admin_department extends CI_Controller
     $this->redirect = "department";
   }
 
+  /**
+   * @description Menampilkan halaman Department (departemen)
+   *
+   * @return void
+   */
   public function index()
   {
     $departmentData = $this->Department->getAllData();
@@ -22,6 +27,12 @@ class Admin_department extends CI_Controller
     template($page, $data);
   }
 
+  /**
+   * @description Menampilkan halaman tambah data & add data Department (departemen)
+   *
+   * @param string $post('name')
+   * @return void
+   */
   public function create()
   {
     $this->_validation();
@@ -47,6 +58,12 @@ class Admin_department extends CI_Controller
     }
   }
 
+  /**
+   * @description Delete data Department (departemen)
+   *
+   * @param string $id
+   * @return void
+   */
   public function delete($id)
   {
     $cek = $this->Department->getDataBy(['id' => $id]);
@@ -63,6 +80,12 @@ class Admin_department extends CI_Controller
     redirect($this->redirect);
   }
 
+  /**
+   * @description Update data Department (departemen)
+   *
+   * @param string $id
+   * @return void
+   */
   public function update($id)
   {
     $cek = $this->Department->getDataBy(['id' => $id]);
@@ -100,6 +123,12 @@ class Admin_department extends CI_Controller
     }
   }
 
+  /**
+   * @description Validasi input
+   *
+   * @param string|null $name
+   * @return void
+   */
   private function _validation($name = null)
   {
     $postName = $this->input->post("name");

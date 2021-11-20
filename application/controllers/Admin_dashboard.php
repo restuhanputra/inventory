@@ -8,6 +8,11 @@ class Admin_dashboard extends CI_Controller
     parent::__construct();
   }
 
+  /**
+   * @description Menampilkan halaman Dashboard (admin)
+   *
+   * @return void
+   */
   public function index()
   {
     $data = [
